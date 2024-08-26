@@ -1,0 +1,4 @@
+Developed an Ethical Investment Screening Tool that looks at a company's Environmental, Social, and Governance (ESG) score to determine if the company should be invested in.
+To get the companies' ESG scores, Libcurl was used to make HTTP GET requests to the RDP API which contains over 9,000 companies' ESG data from 76 different countries, which then uses Jsoncpp to parse the JSON response from the RDP API. 
+Stored the parsed data into MYSQL, which can store data for over 10,000 companies and their ESG score, and integrated it with C++ to deliver a list of 20 companies with the highest ESG scores as investment advice.
+Made up to 100 API requests per minute, and using the C++ Chrono library to find the time taken for each API request which was under 200 milliseconds making the program suitable for processing large data volumes.
