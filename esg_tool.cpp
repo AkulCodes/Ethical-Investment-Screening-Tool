@@ -12,7 +12,7 @@
 #include <vector>
 #include <algorithm>
 
-// Function to write data received from libcurl to a string
+// write data received from libcurl to a string
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size * nmemb;
     try {
@@ -73,7 +73,7 @@ std::vector<std::pair<std::string, double>> parseJsonResponse(const std::string&
     return companies;
 }
 
-// Function to store ESG data into MySQL
+// store ESG data into MySQL
 void storeDataToMySQL(const std::vector<std::pair<std::string, double>>& companies) {
     sql::mysql::MySQL_Driver* driver;
     sql::Connection* con;
@@ -121,7 +121,7 @@ void displayTopCompanies() {
 }
 
 int main() {
-    const std::string apiUrl = "https://api.example.com/get_esg_scores"; // Replace with actual API URL
+    const std::string apiUrl = ""; // Replace with actual API URL
     const int maxRequestsPerMinute = 100;
     const int requestInterval = 60000 / maxRequestsPerMinute; // Time interval between requests in milliseconds
 
